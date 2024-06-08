@@ -17,7 +17,6 @@ import java.util.List;
 public class Driver extends BaseModel{
     private String name;
 
-
     private String licenseNumber;
 
     @OneToMany(mappedBy = "driver")
