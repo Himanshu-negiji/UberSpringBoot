@@ -29,9 +29,9 @@ public class Booking extends BaseModel{
     @Enumerated(value = EnumType.STRING)
     private BookingStatus status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Passenger passenger;
 }
