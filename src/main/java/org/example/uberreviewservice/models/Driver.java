@@ -1,6 +1,7 @@
 package org.example.uberreviewservice.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
@@ -17,12 +18,13 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@JsonIgnoreProperties({"bookings"})
 public class Driver extends BaseModel{
     private String name;
 
     private String licenseNumber;
 
-    @OneToMany(mappedBy = "driver")
+    @OneToMany(mappedBy = "driver", fetch = FetchType.LAZY)
     @Fetch(FetchMode.SUBSELECT) // To resolved (n+1) problem.
     private List<Booking> bookings = new ArrayList<>();
 }

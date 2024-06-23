@@ -15,9 +15,6 @@ public class Booking extends BaseModel{
 
 //  Composition of Entity
 
-    @OneToOne(cascade = CascadeType.PERSIST) // It will create foreign key in review table.
-    private Review review;
-
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date startTime;
 

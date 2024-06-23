@@ -18,6 +18,10 @@ public class Review extends BaseModel {
 
     private Double rating;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY) // It will create foreign key in review table.
+    @JoinColumn(nullable = false)
+    private Booking booking;
+
     @Override
     public String toString() {
         return "Review " + this.content + "Rating " + this.rating;

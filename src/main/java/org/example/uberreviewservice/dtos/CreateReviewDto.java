@@ -8,8 +8,8 @@ import java.io.Serializable;
  * DTO for {@link org.example.uberreviewservice.models.Review}
  */
 @Value
-public class ReviewDto implements Serializable {
-    long id;
+public class CreateReviewDto implements Serializable {
     String content;
     Double rating;
+    Long bookingId;
 }
